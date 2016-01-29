@@ -7,9 +7,11 @@ app.factory('posts', [function(){
 
 app.controller('MainCtrl', [
   '$scope',
-  function($scope){
+  'posts',
+  function($scope, posts){
     $scope.test = 'Hello world!';
-
+    $scope.posts = posts.posts;
+    
     $scope.posts = [
       {title: 'post 1', upvotes: 5},
       {title: 'post 2', upvotes: 2},
