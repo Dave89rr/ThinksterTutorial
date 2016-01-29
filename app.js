@@ -1,24 +1,17 @@
-var app = angular.module('Chipper', []);
+var app = angular.module('Chipper', ['ui.router']);
 app.factory('posts', [function(){
   var o = {
-    posts: []
+    posts: [{title: 'hello', link: '', upvotes: 5}]
   };
+  return o;
 }])
 
 app.controller('MainCtrl', [
   '$scope',
   'posts',
   function($scope, posts){
-    $scope.test = 'Hello world!';
+    // $scope.test = 'Hello world!';
     $scope.posts = posts.posts;
-    
-    $scope.posts = [
-      {title: 'post 1', upvotes: 5},
-      {title: 'post 2', upvotes: 2},
-      {title: 'post 3', upvotes: 15},
-      {title: 'post 4', upvotes: 9},
-      {title: 'post 5', upvotes: 4}
-    ];
 
     $scope.addPost = function(){
       if (!$scope.title || $scope.title === '') { return; }
