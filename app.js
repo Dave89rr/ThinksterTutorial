@@ -1,4 +1,9 @@
 var app = angular.module('Chipper', []);
+app.factory('posts', [function(){
+  var o = {
+    posts: []
+  };
+}])
 
 app.controller('MainCtrl', [
   '$scope',
