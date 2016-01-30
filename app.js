@@ -9,7 +9,7 @@ app.config([
       url: '/home',
       templateUrl: '/home.html',
       controller: 'MainCtrl'
-      });
+      })
     .state('posts', {
       url: '/posts/{id}',
       templateUrl: '/posts.html',
@@ -39,7 +39,6 @@ app.controller('MainCtrl', [
         title: $scope.title,
         link: $scope.link,
         upvotes: 0
-        ]
       });
       $scope.posts.push({
         title: $scope.title,
