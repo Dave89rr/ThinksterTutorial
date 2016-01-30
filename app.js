@@ -15,7 +15,6 @@ app.config([
       templateUrl: '/posts.html',
       controller: 'PostsCtrl'
     });
-
     $urlRouterProvider.otherwise('home');
   }])
 
@@ -35,11 +34,7 @@ app.controller('MainCtrl', [
 
     $scope.addPost = function(){
       if (!$scope.title || $scope.title === '') { return; }
-      $scope.posts.push({
-        title: $scope.title,
-        link: $scope.link,
-        upvotes: 0
-      });
+
       $scope.posts.push({
         title: $scope.title,
         link: $scope.link,
