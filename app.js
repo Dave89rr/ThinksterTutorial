@@ -10,18 +10,13 @@ app.config([
       templateUrl: '/home.html',
       controller: 'MainCtrl'
       });
-    .state('posts', {
-      url: '/posts/{id}',
-      templateUrl: '/posts.html',
-      controller: 'PostsCtrl'
-    })
 
     $urlRouterProvider.otherwise('home');
   }])
 
 app.factory('posts', [function(){
   var o = {
-    posts: []
+    posts: [{title: 'hello', link: '', upvotes: 5}]
   };
   return o;
 }])
@@ -39,10 +34,6 @@ app.controller('MainCtrl', [
         title: $scope.title,
         link: $scope.link,
         upvotes: 0
-        comments: [
-          {author: 'Joe', body: 'Cool post!', upvotes: 0},
-          {author: 'Bob', body: 'Great idea, but everything is wrong!', upvotes: 0},
-        ]
       });
       $scope.title = '';
       $scope.link = '';
@@ -52,11 +43,3 @@ app.controller('MainCtrl', [
       post.upvotes += 1;
     };
 }]);
-
-app.controller('PostsCtrl', [
-  '$scope',
-  '$stateParams',
-  'posts',
-  function($scope, $stateParams, posts){
-
-  }]);
